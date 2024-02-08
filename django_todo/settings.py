@@ -28,11 +28,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-md%0!*#g%0@0@t+*2c@+497n0ib6hbjgc=)!+ylo!v+8si$22o'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-md%0!*#g%0@0@t+*2c@+497n0ib6hbjgc=)!+ylo!v+8si$22o')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 ALLOWED_HOSTS = ['8000-studentofcodeinstitute-h-2cv91ikz26.us2.codeanyapp.com']
 ALLOWED_HOSTS = ['rbb-django-todo-app-f213f76aa2ca.herokuapp.com']
 
@@ -89,8 +89,9 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
    # }
 #}
 
+
 DATABASES = {
-   'default': dj_database_url.parse('postgres://uxsxhyvh:mDGKyIhQahETyhEww4q8hhgXWO8kz6Y2@snuffleupagus.db.elephantsql.com/uxsxhyvh')
+    'default': dj_database_url.parse(os.environ.get('postgres://uxsxhyvh:mDGKyIhQahETyhEww4q8hhgXWO8kz6Y2@snuffleupagus.db.elephantsql.com/uxsxhyvh'))
 }
 
 
