@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-md%0!*#g%0@0@t+*2c@+497n0ib6hbjgc=)!+ylo!v+8si$22o
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-studentofcodeinstitute-h-2cv91ikz26.us2.codeanyapp.com']
-
+ALLOWED_HOSTS = ['rbb-django-todo-app-f213f76aa2ca.herokuapp.com']
 
 # Application definition
 
